@@ -10,7 +10,7 @@
     <div class="col-md-4" style="text-align:center">
         <h3>Machines</h3>
         <p class="sub-heading">That need immediate attention</p>
-        <p class="numbers">{{notificationDetail[0].attention.length}}</p>
+        <p class="numbers">{{(notificationDetail[0].attention| duplicates).length}}</p>
     </div>
     <div class="col-md-4" style="text-align:center">
         <h3>Machines</h3>
@@ -34,7 +34,7 @@
     <div class="col-md-4" style="text-align:center">
         <h3>Alerts</h3>
         <p class="sub-heading">That need immediate attention</p>
-        <p class="numbers">{{notificationDetail[1].attention.length}}</p>
+        <p class="numbers">{{(notificationDetail[1].attention| duplicates).length}}</p>
     </div>
     <div class="col-md-4" style="text-align:center">
         <h3>Alerts</h3>
