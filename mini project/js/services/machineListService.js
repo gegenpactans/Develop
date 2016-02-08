@@ -1,4 +1,4 @@
-mainControllers.factory("machineListService", function($http, $q) {
+mainControllers.factory("machineListService", ['$http','$q',function($http, $q) {
     var data = {};
     data.getJson = function() {
         var defer = $q.defer();
@@ -13,4 +13,4 @@ mainControllers.factory("machineListService", function($http, $q) {
         return defer.promise;
     }
     return data;
-});
+}]);

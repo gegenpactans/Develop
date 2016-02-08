@@ -1,4 +1,5 @@
-mainControllers.factory("metricInfoService", function($http, $q) {
+
+mainControllers.factory("metricInfoService", ['$http','$q',function($http, $q) {
     var data = {};
     data.getmetricData = function() {
         var defer = $q.defer();
@@ -13,4 +14,4 @@ mainControllers.factory("metricInfoService", function($http, $q) {
     }
     return data;
 
-});
+}]);

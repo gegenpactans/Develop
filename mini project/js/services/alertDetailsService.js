@@ -1,4 +1,4 @@
-mainControllers.factory("alertDetailsService", function($http, $q) {
+mainControllers.factory("alertDetailsService",['$http','$q', function($http, $q) {
     var data = {};
     data.getalertData = function() {
         var defer = $q.defer();
@@ -13,4 +13,4 @@ mainControllers.factory("alertDetailsService", function($http, $q) {
     }
     return data;
 
-});
+}]);

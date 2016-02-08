@@ -1,4 +1,4 @@
-mainControllers.factory("notificationDetailService", function($http, $q) {
+mainControllers.factory("notificationDetailService",['$http','$q', function($http, $q) {
     var data = {};
     data.getJson = function() {
         var defer = $q.defer();
@@ -13,4 +13,4 @@ mainControllers.factory("notificationDetailService", function($http, $q) {
         return defer.promise;
     }
     return data;
-});
+}]);
