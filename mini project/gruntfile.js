@@ -1,0 +1,44 @@
+module.exports=function(grunt){
+	grunt.initConfig({
+		pkg:grunt.file.readJSON('package.json'),
+		bower_concat:{
+			main:{
+				"dest":'build/_bower.js',
+			dependencies:{
+				'angular-route':'angular',
+			},
+			
+			}
+		},
+		concat:{
+			files:{
+				src:['js/controllers/*.js','js/directives/*.js','js/services/*.js'],
+				dest:'public/script.js',
+			},
+		},
+		uglify:{
+			files:{
+				src:['public/script.js'],
+				dest:'public/script.min.js',
+			}
+		},
+		cssmin:{
+			target:{
+				files:{
+					'public/style.min.css':['css/style.css'],
+				}
+			}
+		},
+		serve:{
+			options:{
+				port:9000
+			}
+		}	
+	});
+	grunt.loadNpmTasks('grunt-bower-concat');
+	grunt.loadNpmTasks('grunt-contrib-concat');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
+	grunt.loadNpmTasks('grunt-serve');
+	grunt.registerTask('default',['bower_concat','concat','uglify','cssmin']);
+};
